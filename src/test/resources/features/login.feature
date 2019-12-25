@@ -6,4 +6,4 @@ Feature: Login
   Scenario: Login as crm manager with valid credentials
     Given user is on the login page
     Then user enters "eventscrmmanager64@info.com" username and "eventscrmmanager" password
-    And user verifies that "Account Summary" page subtitle is displayed
+    And user verifies that "#Inbox - Odoo" page subtitle is displayed
