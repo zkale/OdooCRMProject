@@ -24,6 +24,5 @@ public class LoginPage {
     public void login(String userName, String password){
         userNameInput.sendKeys(userName);
         passwordInput.sendKeys(password, Keys.ENTER);
-
     }
 }
