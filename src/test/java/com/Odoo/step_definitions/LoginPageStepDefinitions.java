@@ -1,5 +1,6 @@
 package com.Odoo.step_definitions;
 
+import com.Odoo.pages.CalendarPage;
 import com.Odoo.pages.LoginPage;
 import com.Odoo.utilities.BrowserUtils;
 import com.Odoo.utilities.ConfigurationReader;
@@ -9,6 +10,7 @@ import io.cucumber.java.en.*;
 public class LoginPageStepDefinitions {
 
     LoginPage loginPage = new LoginPage();
+    CalendarPage calendarPage = new CalendarPage();
 
     @Given("user is on the login page")
     public void user_is_on_the_login_page() {
@@ -26,6 +28,7 @@ public class LoginPageStepDefinitions {
 
     @Then("user verifies that {string} page subtitle is displayed")
     public void user_verifies_that_page_subtitle_is_displayed(String string) {
-        System.out.println("I am on the #Inbox-Odoo page!");
+        BrowserUtils.wait(3);
+        System.out.println("I am on the " +loginPage.getPageSubTitle()+ " page!");
     }
 }
