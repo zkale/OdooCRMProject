@@ -15,7 +15,7 @@ public class CalendarStepDefinition {
     @Then("user switches into Calendar module")
     public void user_switches_into_Calendar_module() {
         loginPage.waitUntilLoaderDisappear();
-        js.executeScript("arguments[0].click();",calendarPage.calendar);
+        js.executeScript("arguments[0].click();", calendarPage.calendar);
     }
 
 }

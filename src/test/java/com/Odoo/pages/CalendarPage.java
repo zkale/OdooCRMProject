@@ -5,11 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class CalendarPage {
-
-    public CalendarPage(){
-        PageFactory.initElements(Driver.get(), this);
-    }
+public class CalendarPage extends BasePage{
 
     @FindBy(xpath = "(//span[@class='oe_menu_text'])[2]")
     public WebElement calendar;

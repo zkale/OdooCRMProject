@@ -12,11 +12,11 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class BasePage {
+
     @FindBy(css = "ol[class='breadcrumb'] li[class='active']")
     public WebElement pageSubTitle;
 
-
-    public BasePage(){
+    public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }
 
@@ -24,7 +24,6 @@ public class BasePage {
         BrowserUtils.waitForStaleElement(pageSubTitle);
         return pageSubTitle.getText();
     }
-
 
     /**
      * While this loading screen present, html code is a not complete

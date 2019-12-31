@@ -5,8 +5,14 @@ Feature: Calendar
 
   Background: Login as crm manager with valid credentials
     Given user is on the login page
-    Then user enters "eventscrmmanager64@info.com" username and "eventscrmmanager" password
+    And user enters
+    |username|eventscrmmanager64@info.com|
+    |password|eventscrmmanager           |
 
-  Scenario: Login and switch to Calendar module.
+  Scenario Outline: Login and switch to Calendar module.
     Then user switches into Calendar module
-    And user verifies that "Meetings (Week 1)" page subtitle is displayed
+    And user verifies that "<role>" page subtitle is displayed
+
+   Examples: title
+      | role                     |
+      | Meetings (Week 1)        |
