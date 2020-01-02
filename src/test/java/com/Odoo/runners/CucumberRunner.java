@@ -4,13 +4,12 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
-/* Have not provided a path since features and step_Definitions packages are absent */
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = "src/test/resources/features",
+        features = {"src/test/resources/features"},
         glue = "com/Odoo/step_definitions",
         dryRun = false,
-        tags = "@login",
+        tags = "@calendar",
         plugin = {"html:target/default-cucumber-reports",
                 "json:target/cucumber.json"
         }

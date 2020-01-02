@@ -30,7 +30,7 @@ public class BrowserUtils {
      */
     public static void waitForStaleElement(WebElement element) {
         int y = 0;
-        while (y <= 15) {
+        while (y <= 25) {
             try {
                 element.isDisplayed();
                 break;
