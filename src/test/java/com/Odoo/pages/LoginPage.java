@@ -17,9 +17,9 @@ public class LoginPage extends BasePage{
     @FindBy(id="password")
     public WebElement passwordInput;
 
-    public LoginPage(){
-        PageFactory.initElements(Driver.get(), this);
-    }
+    @FindBy(css=".alert.alert-danger")
+    public WebElement warningMessage;
+
 
     public void login(String userName, String password){
         userNameInput.sendKeys(userName);
