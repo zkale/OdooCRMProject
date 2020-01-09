@@ -4,16 +4,18 @@ import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
 
+
+
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        features = {"src/test/resources/features"},
+        features = "@target/rerun.txt",
         glue = "com/Odoo/step_definitions",
-        dryRun = false,
-        tags = "@login_crm_manager",
         plugin = {"html:target/default-cucumber-reports",
                 "json:target/cucumber.json"
+
         }
 )
+public class FailedRunner {
 
-public class CucumberRunner {
+
 }
