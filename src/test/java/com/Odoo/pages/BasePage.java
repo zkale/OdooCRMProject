@@ -16,8 +16,57 @@ public class BasePage {
     @FindBy(css = "ol[class='breadcrumb'] li[class='active']")
     public WebElement pageSubTitle;
 
+
+
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
+    }
+
+   /*
+   @param
+    */
+    public void navigateToModule(String moduleName){
+        String path = "//span[contains(text(),'"+ moduleName + "')]";
+
+        WebDriverWait wait = new WebDriverWait(Driver.get(), 15);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(path)));
+
+        WebElement module = Driver.get().findElement(By.xpath(path));
+        wait.until(ExpectedConditions.visibilityOf(module));
+        wait.until(ExpectedConditions.elementToBeClickable(module));
+
+        waitUntilLoaderDisappear();
+
+        module.click();
+
+   }
+
+   public void clickOnButton(String buttonName) {
+       String path = "//button[contains(text(),'" + buttonName + "')]";
+
+       WebDriverWait wait = new WebDriverWait(Driver.get(), 30);
+       wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(path)));
+
+       WebElement button = Driver.get().findElement(By.xpath(path));
+       wait.until(ExpectedConditions.visibilityOf(button));
+       wait.until(ExpectedConditions.elementToBeClickable(button));
+
+//       waitUntilLoaderDisappear();
+       //BrowserUtils.waitForStaleElement(button);
+
+
+       button.click();
+   }
+
+    public void clickOnMenuButton(String buttonName) {
+        String path =  "//span[contains(text(),'"+ buttonName + "')]";
+        WebDriverWait wait = new WebDriverWait(Driver.get(), 20);
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(path)));
+
+        WebElement button = Driver.get().findElement(By.xpath(path));
+        wait.until(ExpectedConditions.elementToBeClickable(button));
+
+        button.click();
     }
 
     public String getPageSubTitle() {
