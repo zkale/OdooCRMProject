@@ -16,6 +16,7 @@ public class BasePage {
     @FindBy(css = "ol[class='breadcrumb'] li[class='active']")
     public WebElement pageSubTitle;
 
+
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }
@@ -72,6 +73,7 @@ public class BasePage {
 
         button.click();
     }
+
     public String getPageSubTitle() {
         BrowserUtils.waitForStaleElement(pageSubTitle);
         return pageSubTitle.getText();
