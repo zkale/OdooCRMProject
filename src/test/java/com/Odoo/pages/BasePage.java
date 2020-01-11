@@ -20,8 +20,7 @@ public class BasePage {
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }
-
-   /*
+/*
    By zkale
    method for navigating to a module
    @param:  module name to be navigated
