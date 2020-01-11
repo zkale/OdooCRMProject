@@ -17,13 +17,14 @@ public class BasePage {
     public WebElement pageSubTitle;
 
 
-
     public BasePage() {
         PageFactory.initElements(Driver.get(), this);
     }
 
    /*
-   @param
+   By zkale
+   method for navigating to a module
+   @param:  module name to be navigated
     */
     public void navigateToModule(String moduleName){
         String path = "//span[contains(text(),'"+ moduleName + "')]";
@@ -40,6 +41,11 @@ public class BasePage {
         module.click();
 
    }
+   /*
+   By zkale
+   method for clicking on buttons on the base page
+   @param:  button name
+    */
 
    public void clickOnButton(String buttonName) {
        String path = "//button[contains(text(),'" + buttonName + "')]";
@@ -51,13 +57,13 @@ public class BasePage {
        wait.until(ExpectedConditions.visibilityOf(button));
        wait.until(ExpectedConditions.elementToBeClickable(button));
 
-//       waitUntilLoaderDisappear();
-       //BrowserUtils.waitForStaleElement(button);
-
-
        button.click();
    }
-
+    /*
+       By zkale
+       method for clicking on menu buttons on the opened window such as create an opportunity
+       @param:  menu button name
+     */
     public void clickOnMenuButton(String buttonName) {
         String path =  "//span[contains(text(),'"+ buttonName + "')]";
         WebDriverWait wait = new WebDriverWait(Driver.get(), 20);
