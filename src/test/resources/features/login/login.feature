@@ -31,6 +31,29 @@ Feature: Login
       |expenses manager     | expensesmanager93@info.com    | expensesmanager   |
       |expenses manager     | expensesmanager94@info.com    | expensesmanager   |
 
+  @login_navigate_modules_ddt
+  Scenario Outline: Login as <role> and verify <title> page title is correct
+    Given user is on the login page
+    And user logs in as "<role>"
+    When user enters "<username>" username and "<password>" password
+    Then user navigates to "<module>"
+    And user verifies that "<title>" page subtitle is displayed
+
+    Examples: events crm manager
+      | role                | username                      | password            |module     | title             |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Discuss    | #Inbox            |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Calendar   | Meetings (Week 3) |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Notes      | Notes             |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Contacts   | Contacts          |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |CRM        | Pipeline          |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Sales      | Quotations        |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Website    | Dashboard         |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Inventory  | Inventory         |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Repairs    | Repair Orders     |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Events     | Events            |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Employees  | Employees         |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Leaves     | Leaves Summary    |
+      | events crm manager  | eventscrmmanager64@info.com   | eventscrmmanager    |Expenses   | Expenses to Submit|
 
   @login_negative_test
   Scenario: Verify that warning message is displayed when password is not correct

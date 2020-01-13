@@ -29,7 +29,7 @@ public class BasePage {
     public void navigateToModule(String moduleName){
         String path = "//span[contains(text(),'"+ moduleName + "')]";
 
-        WebDriverWait wait = new WebDriverWait(Driver.get(), 15);
+        WebDriverWait wait = new WebDriverWait(Driver.get(), 30);
         wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath(path)));
 
         WebElement module = Driver.get().findElement(By.xpath(path));
