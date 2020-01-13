@@ -11,11 +11,11 @@ Feature: Calendar
 
   Scenario Outline: Login and switch to Calendar module.
     Then user switches into Calendar module
-    And user verifies that "<role>" page subtitle is displayed
+    And user verifies that "<title>" page subtitle is displayed
 
     Examples: title
-      | role              |
-      | Meetings (Week 1) |
+      | title              |
+      | Meetings (Week 1)  |
 
   Scenario Outline: Login and verify calendar view is on <week> be default
     Then user switches into Calendar module
