@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
         features = {"src/test/resources/features"},
         glue = "com/Odoo/step_definitions",
         dryRun = false,
-        tags = "@create_pipeline",
+        tags = "@login_navigate_modules_ddt",
         plugin = {"html:target/default-cucumber-reports",
                 "json:target/cucumber.json"
         }

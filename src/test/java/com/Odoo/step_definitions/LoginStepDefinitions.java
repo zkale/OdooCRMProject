@@ -7,8 +7,6 @@ import com.Odoo.utilities.ConfigurationReader;
 import com.Odoo.utilities.Driver;
 import io.cucumber.java.en.*;
 import org.junit.Assert;
-import org.openqa.selenium.Alert;
-import org.openqa.selenium.WebElement;
 
 import java.util.Map;
 
@@ -67,7 +65,12 @@ public class LoginStepDefinitions {
         System.out.println(actualMessage);
         Assert.assertEquals(expectedMessage, actualMessage);
     }
-
+    @Then("user verifies that {string} page title is displayed")
+    public void user_verifies_that_page_title_is_displayed(String string) {
+        BrowserUtils.waitForPageTitle(string);
+        System.out.println(loginPage.getPageSubTitle());
+        Assert.assertEquals(string, loginPage.getPageSubTitle());
+    }
 
 
 }
